@@ -1,0 +1,96 @@
+/* Reset básico para limpar margens padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Cores principais */
+:root {
+    --azul-principal: #007bff;
+    --preto-profundo: #121212;
+    --cinza-claro: #f4f4f4;
+    --branco: #ffffff;
+}
+
+/* Menu fixo no topo */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--preto-profundo);
+    color: var(--branco);
+    padding: 1rem 5%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilização das Seções (Slides) */
+.slide {
+    padding: 100px 10%;
+    min-height: 80vh; /* Faz cada slide ocupar quase a tela toda */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 { font-size: 3rem; color: var(--azul-principal); margin-bottom: 1rem; }
+h2 { font-size: 2.2rem; color: var(--preto-profundo); margin-bottom: 1.5rem; }
+p { font-size: 1.2rem; line-height: 1.6; max-width: 800px; }
+
+/* Cores de fundo alternadas para separar os slides */
+.gray-bg { background-color: var(--cinza-claro); }
+.dark-bg { background-color: var(--preto-profundo); color: var(--branco); }
+.dark-bg h2 { color: var(--azul-principal); }
+
+/* Bullets e Cards */
+ul { text-align: left; margin-top: 15px; }
+li { margin-bottom: 8px; font-size: 1.1rem; }
+
+/* Botão Interativo */
+#btnInterativo {
+    margin-top: 25px;
+    padding: 12px 30px;
+    background-color: var(--azul-principal);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+#btnInterativo:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.hidden { display: none; }
+
+/* DESIGN RESPONSIVO (Ajustes para celular) */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+    .nav-links { display: none; } /* Esconde links no mobile para simplificar */
+    .slide { padding: 80px 5%; }
+}
