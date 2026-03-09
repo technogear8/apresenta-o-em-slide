@@ -3,58 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo Aoi: My Best Friend</title>
+    <title>Todo Aoi - My Best Friend</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav id="navbar">
-        <div class="logo">葵 東堂 (Todo Aoi)</div>
+        <div class="logo">葵 東堂</div>
         <ul class="nav-links">
-            <li><a href="#slide1">O Despertar</a></li>
-            <li><a href="#slide3">A Técnica</a></li>
+            <li><a href="#slide1">Home</a></li>
+            <li><a href="#slide3">Brotherhood</a></li>
             <li><a href="#slide8">Conclusão</a></li>
         </ul>
     </nav>
 
-    <main id="main-container">
+    <main>
         <section id="slide1" class="slide">
-            <div class="content-box">
-                <h1>Qual é o seu tipo de mulher?</h1>
-                <p>Responda com sinceridade, ou não seremos "Best Friends".</p>
-                <button id="btnBoogieWoogie">👏 CLAP! (Boogie Woogie)</button>
+            <div class="glass-card">
+                <h1>BOOGIE WOOGIE</h1>
+                <p>O guia definitivo para o sucesso com 530.000 de QI.</p>
+                <button id="clapBtn">👏 DAR UM CLAP!</button>
             </div>
         </section>
 
-        <section id="slide2" class="slide dark-bg">
-            <div class="content-box border-blue">
-                <h2>O Conceito de Brother</h2>
-                <p>Nesta seção, explicamos como a conexão entre dois feiticeiros pode mudar o mundo.</p>
+        <section id="slide2" class="slide">
+            <div class="glass-card">
+                <h2>01. A Pergunta Fundamental</h2>
+                <p>Para entender este projeto, você deve primeiro responder: Qual o seu tipo de mulher?</p>
             </div>
         </section>
 
         <section id="slide3" class="slide">
-            <div class="card">
-                <h2>Os 530.000 de QI</h2>
+            <div class="glass-card">
+                <h2>02. Pilares do Sucesso</h2>
                 <ul>
-                    <li>Análise tática em milissegundos.</li>
-                    <li>Força bruta imparável.</li>
-                    <li>Lealdade absoluta aos seus irmãos.</li>
+                    <li>**Consistência:** Treino físico e mental diário.</li>
+                    <li>**Visão:** Antecipar os movimentos do adversário.</li>
+                    <li>**Parceria:** Encontrar o seu "Best Friend".</li>
                 </ul>
             </div>
         </section>
 
-        <section id="slide4" class="slide dark-bg"><h2>Expansão de Domínio</h2><p>Conteúdo técnico sobre o projeto aqui.</p></section>
-        <section id="slide5" class="slide"><h2>A Energia Amaldiçoada</h2><p>Gráficos e dados sobre o desempenho.</p></section>
-        <section id="slide6" class="slide dark-bg"><h2>Táticas de Combate</h2><p>Estratégias para o mercado/vendas.</p></section>
-        <section id="slide7" class="slide"><h2>O Ídolo: Takada-chan</h2><p>Inspiração e motivação para o time.</p></section>
+        <section id="slide4" class="slide"><div class="glass-card"><h2>03. Desenvolvimento</h2><p>Detalhes técnicos e execução do plano.</p></div></section>
+        <section id="slide5" class="slide"><div class="glass-card"><h2>04. Análise de Dados</h2><p>Números que provam a eficiência da nossa técnica.</p></div></section>
+        <section id="slide6" class="slide"><div class="glass-card"><h2>05. O Ídolo Interno</h2><p>A motivação que vem da admiração (Estilo Takada-chan).</p></div></section>
+        <section id="slide7" class="slide"><div class="glass-card"><h2>06. Superação de Limites</h2><p>Como reagir quando a energia amaldiçoada acaba.</p></div></section>
 
-        <section id="slide8" class="slide final-bg">
-            <h2>MISSÃO CONCLUÍDA</h2>
-            <p>Nós somos os melhores amigos agora. Vamos conquistar o topo!</p>
-            <div id="status-amizade" class="hidden">STATUS: BEST FRIENDS FOREVER! ⚡</div>
+        <section id="slide8" class="slide">
+            <div class="glass-card" id="final-card">
+                <h2>07. Conclusão</h2>
+                <p>Nós somos os melhores amigos. O topo é o nosso lugar.</p>
+                <h3 id="status" class="hidden">STATUS: BROTHERHOOD ATIVADA! ⚡</h3>
+            </div>
         </section>
     </main>
 
+    <script src="script.js"></script>
 </body>
 </html>

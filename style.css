@@ -1,87 +1,99 @@
-:root {
-    --azul-energia: #00a2ff;
-    --roxo-todo: #6a0dad;
-    --preto-jujutsu: #0a0a0a;
-    --branco: #ffffff;
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Impact', 'Arial Black', sans-serif;
 }
 
 body {
-    background-color: var(--preto-jujutsu);
-    color: var(--branco);
-    font-family: 'Arial Black', sans-serif;
-    overflow-x: hidden;
+    background-color: #000;
+    /* Imagem de fundo do Todo Aoi */
+    background-image: url('https://images.alphacoders.com/113/1135756.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito de parallax */
+    color: white;
 }
 
-/* Menu de Navegação */
+/* Menu no Topo */
 #navbar {
-    background: rgba(10, 10, 10, 0.9);
-    border-bottom: 3px solid var(--azul-energia);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 5%;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid #00a2ff;
     position: fixed;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
 }
 
-.logo { color: var(--azul-energia); font-size: 1.5rem; text-shadow: 2px 2px var(--roxo-todo); }
-.nav-links { display: flex; list-style: none; }
-.nav-links a { color: white; text-decoration: none; margin-left: 20px; text-transform: uppercase; }
+.nav-links {
+    display: flex;
+    list-style: none;
+}
 
-/* Slides */
+.nav-links a {
+    color: #00a2ff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Estilização dos Slides */
 .slide {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 10%;
-    border-bottom: 1px solid #222;
+    padding: 20px;
 }
 
-.dark-bg { background-color: #111; }
-.final-bg { background: linear-gradient(to bottom, #0a0a0a, var(--azul-energia)); }
-
-/* Caixas de Conteúdo */
-.content-box {
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    border-left: 10px solid var(--azul-energia);
-    text-align: left;
+/* Cartão com efeito de vidro (Glassmorphism) */
+.glass-card {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border: 2px solid #00a2ff;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 700px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 162, 255, 0.3);
 }
 
-h1, h2 { color: var(--azul-energia); text-transform: uppercase; margin-bottom: 20px; }
+h1 { font-size: 3.5rem; color: #00a2ff; margin-bottom: 1rem; }
+h2 { font-size: 2rem; margin-bottom: 1rem; color: #fff; }
+p { font-size: 1.2rem; font-family: 'Arial', sans-serif; line-height: 1.6; }
 
-/* Efeito do Botão "Clap" */
-#btnBoogieWoogie {
-    background: var(--roxo-todo);
-    color: white;
-    border: none;
+ul { text-align: left; list-style: none; margin-top: 20px; }
+li { padding: 10px 0; border-left: 4px solid #00a2ff; padding-left: 15px; margin-bottom: 10px; background: rgba(255,255,255,0.05); }
+
+/* Botão Interativo */
+#clapBtn {
+    margin-top: 30px;
     padding: 15px 40px;
-    font-size: 1.2rem;
+    background: #00a2ff;
+    color: black;
+    border: none;
     font-weight: bold;
+    font-size: 1.2rem;
     cursor: pointer;
-    box-shadow: 0 0 15px var(--azul-energia);
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
-#btnBoogieWoogie:active { transform: scale(0.9); }
-
-/* Animação de Troca (Boogie Woogie) */
-.swap-animation {
-    animation: flashSwap 0.4s ease-in-out;
+#clapBtn:hover {
+    background: #fff;
+    box-shadow: 0 0 20px #00a2ff;
+    transform: scale(1.1);
 }
 
-@keyframes flashSwap {
-    0% { opacity: 1; transform: scale(1); filter: brightness(1); }
-    50% { opacity: 0.5; transform: scale(1.1); filter: brightness(3) blue; }
-    100% { opacity: 1; transform: scale(1); filter: brightness(1); }
-}
+.hidden { display: none; color: #00a2ff; margin-top: 20px; font-size: 1.5rem; }
 
-.hidden { display: none; color: gold; font-size: 2rem; margin-top: 20px; }
-
-/* Responsividade */
-@media (max-width: 600px) {
-    h1 { font-size: 1.8rem; }
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    h1 { font-size: 2.2rem; }
     .nav-links { display: none; }
+    .glass-card { width: 95%; padding: 20px; }
 }

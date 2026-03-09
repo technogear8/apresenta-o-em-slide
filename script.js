@@ -1,27 +1,29 @@
-document.getElementById('btnBoogieWoogie').addEventListener('click', function() {
-    // Som de palma (simulado visualmente)
-    const body = document.body;
+// Selecionando os elementos
+const clapBtn = document.getElementById('clapBtn');
+const statusMsg = document.getElementById('status');
+const body = document.body;
+
+// Função que simula o Boogie Woogie
+clapBtn.addEventListener('click', () => {
     
-    // Adiciona a classe de animação de "flash"
-    body.classList.add('swap-animation');
+    // 1. Efeito visual de "Flash" na tela (como o estalo de dedos)
+    body.style.filter = 'invert(1)';
     
-    // Tira a animação depois de 400ms para poder repetir
     setTimeout(() => {
-        body.classList.remove('swap-animation');
-    }, 400);
+        body.style.filter = 'invert(0)';
+        
+        // 2. Troca as cores do tema (Azul para Roxo)
+        const corAtual = getComputedStyle(document.documentElement).getPropertyValue('--azul-energia');
+        document.documentElement.style.setProperty('--azul-energia', '#a200ff');
+        
+        // 3. Mostra a mensagem secreta no último slide
+        statusMsg.style.display = 'block';
+        
+        // 4. Mensagem de Alerta ao estilo Todo
+        alert("BROTHER! A técnica foi ativada. Agora somos um só time!");
+        
+        // Scroll automático para o final como se tivesse sido "teleportado"
+        document.getElementById('slide8').scrollIntoView({ behavior: 'smooth' });
 
-    // EFEITO BOOGIE WOOGIE: Troca as posições dos títulos
-    let titulos = document.querySelectorAll('h1, h2');
-    let texto0 = titulos[0].innerText;
-    titulos[0].innerText = titulos[1].innerText;
-    titulos[1].innerText = texto0;
-
-    // Muda a cor da energia
-    const root = document.querySelector(':root');
-    root.style.setProperty('--azul-energia', '#ff00ea'); // Muda para rosa/roxo Takada-chan
-
-    // Mostra a mensagem final no slide 8
-    document.getElementById('status-amizade').classList.remove('hidden');
-    
-    console.log("BOOGIE WOOGIE ATIVADO! 👏");
+    }, 150); // O flash dura 150 milissegundos
 });
