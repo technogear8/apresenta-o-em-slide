@@ -1,22 +1,27 @@
-// Espera o documento carregar
-document.addEventListener('DOMContentLoaded', () => {
+document.getElementById('btnBoogieWoogie').addEventListener('click', function() {
+    // Som de palma (simulado visualmente)
+    const body = document.body;
     
-    const botao = document.getElementById('btnInterativo');
-    const mensagem = document.getElementById('mensagemOculta');
+    // Adiciona a classe de animação de "flash"
+    body.classList.add('swap-animation');
+    
+    // Tira a animação depois de 400ms para poder repetir
+    setTimeout(() => {
+        body.classList.remove('swap-animation');
+    }, 400);
 
-    // Adiciona o evento de clique
-    botao.addEventListener('click', () => {
-        // Efeito 1: Mudar a cor de fundo do botão
-        botao.style.backgroundColor = '#28a745'; // Muda para verde
-        botao.innerText = 'Ativado!';
+    // EFEITO BOOGIE WOOGIE: Troca as posições dos títulos
+    let titulos = document.querySelectorAll('h1, h2');
+    let texto0 = titulos[0].innerText;
+    titulos[0].innerText = titulos[1].innerText;
+    titulos[1].innerText = texto0;
 
-        // Efeito 2: Mostrar uma mensagem de agradecimento no último slide
-        mensagem.classList.remove('hidden');
-        
-        // Efeito 3: Alerta simples para o usuário
-        alert('Obrigado por interagir! O conteúdo foi desbloqueado no final da página.');
-        
-        // Scroll suave até a mensagem que apareceu
-        mensagem.scrollIntoView({ behavior: 'smooth' });
-    });
+    // Muda a cor da energia
+    const root = document.querySelector(':root');
+    root.style.setProperty('--azul-energia', '#ff00ea'); // Muda para rosa/roxo Takada-chan
+
+    // Mostra a mensagem final no slide 8
+    document.getElementById('status-amizade').classList.remove('hidden');
+    
+    console.log("BOOGIE WOOGIE ATIVADO! 👏");
 });

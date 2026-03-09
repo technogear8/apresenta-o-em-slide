@@ -1,96 +1,87 @@
-/* Reset básico para limpar margens padrão */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Cores principais */
 :root {
-    --azul-principal: #007bff;
-    --preto-profundo: #121212;
-    --cinza-claro: #f4f4f4;
+    --azul-energia: #00a2ff;
+    --roxo-todo: #6a0dad;
+    --preto-jujutsu: #0a0a0a;
     --branco: #ffffff;
 }
 
-/* Menu fixo no topo */
+body {
+    background-color: var(--preto-jujutsu);
+    color: var(--branco);
+    font-family: 'Arial Black', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Menu de Navegação */
 #navbar {
+    background: rgba(10, 10, 10, 0.9);
+    border-bottom: 3px solid var(--azul-energia);
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: var(--preto-profundo);
-    color: var(--branco);
-    padding: 1rem 5%;
+    padding: 20px 5%;
     position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 100;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-}
+.logo { color: var(--azul-energia); font-size: 1.5rem; text-shadow: 2px 2px var(--roxo-todo); }
+.nav-links { display: flex; list-style: none; }
+.nav-links a { color: white; text-decoration: none; margin-left: 20px; text-transform: uppercase; }
 
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    color: var(--branco);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Estilização das Seções (Slides) */
+/* Slides */
 .slide {
-    padding: 100px 10%;
-    min-height: 80vh; /* Faz cada slide ocupar quase a tela toda */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    padding: 0 10%;
+    border-bottom: 1px solid #222;
 }
 
-h1 { font-size: 3rem; color: var(--azul-principal); margin-bottom: 1rem; }
-h2 { font-size: 2.2rem; color: var(--preto-profundo); margin-bottom: 1.5rem; }
-p { font-size: 1.2rem; line-height: 1.6; max-width: 800px; }
+.dark-bg { background-color: #111; }
+.final-bg { background: linear-gradient(to bottom, #0a0a0a, var(--azul-energia)); }
 
-/* Cores de fundo alternadas para separar os slides */
-.gray-bg { background-color: var(--cinza-claro); }
-.dark-bg { background-color: var(--preto-profundo); color: var(--branco); }
-.dark-bg h2 { color: var(--azul-principal); }
+/* Caixas de Conteúdo */
+.content-box {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 10px solid var(--azul-energia);
+    text-align: left;
+}
 
-/* Bullets e Cards */
-ul { text-align: left; margin-top: 15px; }
-li { margin-bottom: 8px; font-size: 1.1rem; }
+h1, h2 { color: var(--azul-energia); text-transform: uppercase; margin-bottom: 20px; }
 
-/* Botão Interativo */
-#btnInterativo {
-    margin-top: 25px;
-    padding: 12px 30px;
-    background-color: var(--azul-principal);
+/* Efeito do Botão "Clap" */
+#btnBoogieWoogie {
+    background: var(--roxo-todo);
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 1rem;
-    transition: 0.3s;
+    box-shadow: 0 0 15px var(--azul-energia);
+    transition: 0.2s;
 }
 
-#btnInterativo:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+#btnBoogieWoogie:active { transform: scale(0.9); }
+
+/* Animação de Troca (Boogie Woogie) */
+.swap-animation {
+    animation: flashSwap 0.4s ease-in-out;
 }
 
-.hidden { display: none; }
+@keyframes flashSwap {
+    0% { opacity: 1; transform: scale(1); filter: brightness(1); }
+    50% { opacity: 0.5; transform: scale(1.1); filter: brightness(3) blue; }
+    100% { opacity: 1; transform: scale(1); filter: brightness(1); }
+}
 
-/* DESIGN RESPONSIVO (Ajustes para celular) */
-@media (max-width: 768px) {
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.6rem; }
-    .nav-links { display: none; } /* Esconde links no mobile para simplificar */
-    .slide { padding: 80px 5%; }
+.hidden { display: none; color: gold; font-size: 2rem; margin-top: 20px; }
+
+/* Responsividade */
+@media (max-width: 600px) {
+    h1 { font-size: 1.8rem; }
+    .nav-links { display: none; }
 }
