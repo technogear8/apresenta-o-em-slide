@@ -19,5 +19,3 @@ btn.addEventListener('click', () => {
         output.style.border = "2px solid #00ffff";
     }, 1500);
 });
-
-});
