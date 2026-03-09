@@ -1,63 +1,108 @@
+<!-- Aqui começa o arquivo HTML. Este é o esqueleto do site, onde definimos a estrutura como cabeçalho, menu, seções e rodapé. -->
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
+    <!-- Meta tags para responsividade: isso faz o site se adaptar a diferentes tamanhos de tela, como mobile e desktop. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuro Sustentável - Projeto Escolar</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Futuro Sustentável</title>
+    <!-- Link para o arquivo CSS: aqui conectamos o estilo ao HTML. -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+    <!-- Cabeçalho com o menu no topo: isso é a navegação principal, com links para cada seção do site, representando as 7 páginas dos slides. -->
     <header>
         <nav>
-            <div class="logo">EcoFuturo</div>
             <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#sobre">O Problema</a></li>
-                <li><a href="#solucoes">Soluções</a></li>
-                <li><a href="#contato">Ação</a></li>
+                <li><a href="#pagina1">Página 1</a></li>
+                <li><a href="#pagina2">Página 2</a></li>
+                <li><a href="#pagina3">Página 3</a></li>
+                <li><a href="#pagina4">Página 4</a></li>
+                <li><a href="#pagina5">Página 5</a></li>
+                <li><a href="#pagina6">Página 6</a></li>
+                <li><a href="#pagina7">Página 7</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Conteúdo principal: cada seção representa uma página dos slides. Usei IDs para os links do menu funcionarem. Assumi conteúdo genérico sobre "Futuro Sustentável" como explicação de um assunto, com títulos, subtítulos e bullet points para manter a hierarquia visual. -->
     <main>
-        <section id="home" class="slide">
-            <h1>Rumo a um Futuro Sustentável</h1>
-            <p>Como nossas escolhas de hoje moldam o planeta de amanhã.</p>
-            <button id="btnInterativo">Clique para uma mensagem!</button>
+        <section id="pagina1">
+            <h1>Introdução ao Futuro Sustentável</h1>
+            <h2>O que é Sustentabilidade?</h2>
+            <ul>
+                <li>Definição: Uso de recursos sem comprometer as gerações futuras.</li>
+                <li>Importância: Preservar o planeta para todos.</li>
+            </ul>
+            <!-- Botão para interatividade: ao clicar, vai mudar de cor ou mostrar algo via JavaScript. -->
+            <button id="botao-interativo">Clique para Saber Mais</button>
+            <p id="mensagem-oculta" style="display: none;">Sustentabilidade é essencial para o nosso futuro!</p>
         </section>
 
-        <section id="sobre" class="slide">
-            <h2>O Cenário Atual</h2>
-            <p>Atualmente, enfrentamos desafios críticos que exigem atenção imediata:</p>
+        <section id="pagina2">
+            <h1>Energia Renovável</h1>
+            <h2>Fontes Alternativas</h2>
             <ul>
-                <li>Aquecimento global e mudanças climáticas.</li>
-                <li>Poluição excessiva por plásticos nos oceanos.</li>
-                <li>Escassez de recursos naturais potáveis.</li>
+                <li>Solar: Energia do sol.</li>
+                <li>Eólica: Energia do vento.</li>
+                <li>Hidrelétrica: Energia da água.</li>
             </ul>
         </section>
 
-        <section class="slide">
-            <h2>Energias Renováveis</h2>
-            <p>A transição energética é o pilar da sustentabilidade.</p>
-            <div class="cards">
-                <div class="card">Solar</div>
-                <div class="card">Eólica</div>
-                <div class="card">Hídrica</div>
-            </div>
+        <section id="pagina3">
+            <h1>Consumo Consciente</h1>
+            <h2>Reduzir, Reusar, Reciclar</h2>
+            <ul>
+                <li>Reduzir: Comprar menos.</li>
+                <li>Reusar: Usar itens várias vezes.</li>
+                <li>Reciclar: Transformar lixo em novos produtos.</li>
+            </ul>
         </section>
 
-        <section id="contato" class="slide">
-            <h2>Faça sua Parte</h2>
-            <p>O futuro sustentável não é um destino, é um caminho construído por todos nós.</p>
-            <p><strong>Obrigado por acompanhar este trabalho!</strong></p>
+        <section id="pagina4">
+            <h1>Agricultura Sustentável</h1>
+            <h2>Práticas Ecológicas</h2>
+            <ul>
+                <li>Orgânicos: Sem pesticidas químicos.</li>
+                <li>Rotação de Culturas: Manter solo saudável.</li>
+            </ul>
+        </section>
+
+        <section id="pagina5">
+            <h1>Transporte Verde</h1>
+            <h2>Opções Ecológicas</h2>
+            <ul>
+                <li>Bicicletas: Zero emissão.</li>
+                <li>Carros Elétricos: Menos poluição.</li>
+                <li>Transporte Público: Reduz congestionamento.</li>
+            </ul>
+        </section>
+
+        <section id="pagina6">
+            <h1>Educação e Conscientização</h1>
+            <h2>Ensinando as Gerações</h2>
+            <ul>
+                <li>Escolas: Programas ambientais.</li>
+                <li>Campanhas: Redes sociais para espalhar conhecimento.</li>
+            </ul>
+        </section>
+
+        <section id="pagina7">
+            <h1>Conclusão</h1>
+            <h2>O Caminho para um Futuro Melhor</h2>
+            <ul>
+                <li>Ações Individuais: Cada um faz a diferença.</li>
+                <li>Políticas Globais: Acordos internacionais.</li>
+            </ul>
         </section>
     </main>
 
+    <!-- Rodapé: parte final do site, com informações como autor. -->
     <footer>
-        <p>&copy; 2024 - Desenvolvido para o Trabalho Escolar</p>
+        <p>Criado por [Seu Nome] - Trabalho Escolar sobre Futuro Sustentável</p>
     </footer>
 
+    <!-- Link para o arquivo JavaScript: aqui conectamos os scripts ao HTML. -->
     <script src="script.js"></script>
 </body>
 </html>
