@@ -1,29 +1,25 @@
-// Selecionando os elementos
-const clapBtn = document.getElementById('clapBtn');
-const statusMsg = document.getElementById('status');
-const body = document.body;
+// Selecionando os elementos que vamos usar
+const botao = document.getElementById('btnInterativo');
+const mensagem = document.getElementById('mensagemOculta');
 
-// Função que simula o Boogie Woogie
-clapBtn.addEventListener('click', () => {
+// Função que roda quando o botão é clicado
+botao.addEventListener('click', function() {
     
-    // 1. Efeito visual de "Flash" na tela (como o estalo de dedos)
-    body.style.filter = 'invert(1)';
+    // 1. Muda o texto da mensagem
+    mensagem.innerText = "MY BESTO FRIENDO! Você ativou o Boogie Woogie!";
+    
+    // 2. Muda a cor da fonte da mensagem para Ciano
+    mensagem.style.color = "#00ffff";
+    mensagem.style.marginTop = "20px";
+    mensagem.style.fontSize = "1.5rem";
+
+    // 3. Efeito Visual: Muda a cor de fundo do corpo do site temporariamente
+    document.body.style.backgroundColor = "#220000"; // Vermelho escuro
     
     setTimeout(() => {
-        body.style.filter = 'invert(0)';
-        
-        // 2. Troca as cores do tema (Azul para Roxo)
-        const corAtual = getComputedStyle(document.documentElement).getPropertyValue('--azul-energia');
-        document.documentElement.style.setProperty('--azul-energia', '#a200ff');
-        
-        // 3. Mostra a mensagem secreta no último slide
-        statusMsg.style.display = 'block';
-        
-        // 4. Mensagem de Alerta ao estilo Todo
-        alert("BROTHER! A técnica foi ativada. Agora somos um só time!");
-        
-        // Scroll automático para o final como se tivesse sido "teleportado"
-        document.getElementById('slide8').scrollIntoView({ behavior: 'smooth' });
+        document.body.style.backgroundColor = "#000"; // Volta para o preto após 1 segundo
+    }, 1000);
 
-    }, 150); // O flash dura 150 milissegundos
+    // Alerta no navegador
+    alert("Técnica Ativada: Sangue e Aço!");
 });

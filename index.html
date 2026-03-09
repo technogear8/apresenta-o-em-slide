@@ -3,58 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo Aoi - My Best Friend</title>
+    <title>Meu Trabalho Escolar | Ultrakill & JJK</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav id="navbar">
-        <div class="logo">葵 東堂</div>
-        <ul class="nav-links">
-            <li><a href="#slide1">Home</a></li>
-            <li><a href="#slide3">Brotherhood</a></li>
-            <li><a href="#slide8">Conclusão</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav id="menu">
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Personagens</a></li>
+                <li><a href="#lore">Lore</a></li>
+                <li><a href="#interacao">Interativo</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <section id="slide1" class="slide">
-            <div class="glass-card">
-                <h1>BOOGIE WOOGIE</h1>
-                <p>O guia definitivo para o sucesso com 530.000 de QI.</p>
-                <button id="clapBtn">👏 DAR UM CLAP!</button>
+        <section id="home" class="slide">
+            <h1>ANÁLISE V1 VS. MALDIÇÕES</h1>
+            <p>Um estudo sobre poder, sangue e o vazio.</p>
+        </section>
+
+        <section id="sobre" class="slide">
+            <h2>Os Protagonistas</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>V1 (Ultrakill)</h3>
+                    <ul>
+                        <li>Máquina movida a sangue</li>
+                        <li>Estética Retro-FPS</li>
+                        <li>Mankind is Dead</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Todo & Choso</h3>
+                    <ul>
+                        <li>O "Brother" e o Irmão mais velho</li>
+                        <li>Manipulação de Sangue e Espaço</li>
+                        <li>Poderes de Graus Especiais</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <section id="slide2" class="slide">
-            <div class="glass-card">
-                <h2>01. A Pergunta Fundamental</h2>
-                <p>Para entender este projeto, você deve primeiro responder: Qual o seu tipo de mulher?</p>
-            </div>
+        <section id="lore" class="slide">
+            <h2>Hollow Knight: O Vazio</h2>
+            <p>Assim como em Ultrakill, o mundo de Hallownest explora o declínio de uma civilização.</p>
+            <blockquote>"No cost too great."</blockquote>
         </section>
 
-        <section id="slide3" class="slide">
-            <div class="glass-card">
-                <h2>02. Pilares do Sucesso</h2>
-                <ul>
-                    <li>**Consistência:** Treino físico e mental diário.</li>
-                    <li>**Visão:** Antecipar os movimentos do adversário.</li>
-                    <li>**Parceria:** Encontrar o seu "Best Friend".</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="slide4" class="slide"><div class="glass-card"><h2>03. Desenvolvimento</h2><p>Detalhes técnicos e execução do plano.</p></div></section>
-        <section id="slide5" class="slide"><div class="glass-card"><h2>04. Análise de Dados</h2><p>Números que provam a eficiência da nossa técnica.</p></div></section>
-        <section id="slide6" class="slide"><div class="glass-card"><h2>05. O Ídolo Interno</h2><p>A motivação que vem da admiração (Estilo Takada-chan).</p></div></section>
-        <section id="slide7" class="slide"><div class="glass-card"><h2>06. Superação de Limites</h2><p>Como reagir quando a energia amaldiçoada acaba.</p></div></section>
-
-        <section id="slide8" class="slide">
-            <div class="glass-card" id="final-card">
-                <h2>07. Conclusão</h2>
-                <p>Nós somos os melhores amigos. O topo é o nosso lugar.</p>
-                <h3 id="status" class="hidden">STATUS: BROTHERHOOD ATIVADA! ⚡</h3>
-            </div>
+        <section id="interacao" class="slide">
+            <h2>Teste de Afinidade</h2>
+            <p>Clique no botão abaixo para descobrir seu nível de "Besto Friendo".</p>
+            <button id="btnInterativo">Ativar Técnica Amaldiçoada</button>
+            <p id="mensagemOculta"></p>
         </section>
     </main>
 
