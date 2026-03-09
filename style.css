@@ -1,106 +1,114 @@
-/* Reset básico para o site não ter bordas brancas */
+/* Configuração Geral */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Courier New', Courier, monospace; /* Fonte com cara de código */
 }
 
 body {
     background-color: #000; /* Fundo Preto */
     color: #fff;
-    scroll-behavior: smooth; /* Deixa o scroll suave ao clicar no menu */
+    scroll-behavior: smooth;
 }
 
 /* Menu no Topo */
 header {
-    background-color: #1a1a1a;
-    border-bottom: 3px solid #ff0000; /* Linha Vermelha */
+    background: #111;
+    border-bottom: 2px solid #ff0000; /* Linha Vermelha estilo Ultrakill */
     position: fixed;
     width: 100%;
-    top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
-#menu ul {
+nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
     padding: 15px;
 }
 
-#menu li {
-    margin: 0 20px;
-}
-
-#menu a {
+nav a {
     color: #00ffff; /* Azul Ciano */
     text-decoration: none;
+    margin: 0 15px;
     font-weight: bold;
-    text-transform: uppercase;
+    transition: 0.3s;
 }
 
-#menu a:hover {
-    color: #ff0000; /* Muda para vermelho no hover */
+nav a:hover {
+    color: #ff0000;
 }
 
-/* Estilo dos Slides */
+/* Slides */
 .slide {
-    min-height: 100vh; /* Cada slide ocupa a tela toda */
-    padding: 100px 20px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    padding: 80px 20px;
+    border-bottom: 1px solid #222;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 8vw, 4rem); /* Tamanho responsivo */
     color: #ff0000;
-    text-shadow: 2px 2px #00ffff;
+    text-shadow: 3px 3px #00ffff;
+    margin-bottom: 10px;
 }
 
 h2 {
     color: #00ffff;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-/* Cards de conteúdo */
+/* Cards de Distros */
 .cards {
     display: flex;
-    flex-wrap: wrap; /* Faz os cards quebrarem linha no celular */
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
 .card {
-    background: #111;
-    border: 1px solid #ff0000;
+    background: #0a0a0a;
+    border: 1px solid #00ffff;
     padding: 20px;
-    border-radius: 8px;
-    width: 300px;
+    width: 280px;
+    transition: transform 0.3s;
 }
 
-/* Responsividade (Design para celular) */
-@media (max-width: 600px) {
-    h1 { font-size: 1.8rem; }
-    #menu ul { flex-direction: column; align-items: center; }
-    #menu li { margin: 5px 0; }
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #ff0000;
 }
 
-/* Estilo do Botão */
+/* Botão e Console */
 button {
-    background-color: #00ffff;
-    color: #000;
+    background: #ff0000;
+    color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 15px 25px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    margin-top: 20px;
 }
 
-button:hover {
-    background-color: #ff0000;
-    transform: scale(1.1);
+#terminal-output {
+    margin-top: 20px;
+    background: #111;
+    color: #00ff00; /* Verde clássico de terminal */
+    padding: 15px;
+    width: 80%;
+    max-width: 500px;
+    min-height: 50px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Responsividade para Mobile */
+@media (max-width: 768px) {
+    nav ul { flex-direction: column; align-items: center; }
+    .card { width: 100%; }
 }

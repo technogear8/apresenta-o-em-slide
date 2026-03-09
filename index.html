@@ -3,61 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Trabalho Escolar | Ultrakill & JJK</title>
+    <title>Guia Linux | Do Zero ao Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <nav id="menu">
+        <nav>
             <ul>
                 <li><a href="#home">Início</a></li>
-                <li><a href="#sobre">Personagens</a></li>
-                <li><a href="#lore">Lore</a></li>
-                <li><a href="#interacao">Interativo</a></li>
+                <li><a href="#distros">Melhores Distros</a></li>
+                <li><a href="#tutorial">Como Instalar</a></li>
+                <li><a href="#terminal">O Terminal</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="home" class="slide">
-            <h1>ANÁLISE V1 VS. MALDIÇÕES</h1>
-            <p>Um estudo sobre poder, sangue e o vazio.</p>
+            <h1>A JORNADA LINUX</h1>
+            <p>Transforme seu hardware com o poder do Open Source.</p>
         </section>
 
-        <section id="sobre" class="slide">
-            <h2>Os Protagonistas</h2>
+        <section id="distros" class="slide">
+            <h2>O Top 3 para Estudantes</h2>
             <div class="cards">
                 <div class="card">
-                    <h3>V1 (Ultrakill)</h3>
+                    <h3>Linux Mint</h3>
+                    <p>Estabilidade total. Ideal para quem vem do Windows.</p>
                     <ul>
-                        <li>Máquina movida a sangue</li>
-                        <li>Estética Retro-FPS</li>
-                        <li>Mankind is Dead</li>
+                        <li>Interface Cinnamon</li>
+                        <li>Leve e Robusto</li>
                     </ul>
                 </div>
                 <div class="card">
-                    <h3>Todo & Choso</h3>
+                    <h3>Pop!_OS</h3>
+                    <p>Focado em produtividade e desenvolvimento.</p>
                     <ul>
-                        <li>O "Brother" e o Irmão mais velho</li>
-                        <li>Manipulação de Sangue e Espaço</li>
-                        <li>Poderes de Graus Especiais</li>
+                        <li>Auto-tiling de janelas</li>
+                        <li>Drivers Nvidia nativos</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Fedora</h3>
+                    <p>Tecnologia de ponta e inovação constante.</p>
+                    <ul>
+                        <li>Kernel sempre atualizado</li>
+                        <li>Padrão GNOME puro</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="lore" class="slide">
-            <h2>Hollow Knight: O Vazio</h2>
-            <p>Assim como em Ultrakill, o mundo de Hallownest explora o declínio de uma civilização.</p>
-            <blockquote>"No cost too great."</blockquote>
+        <section id="tutorial" class="slide">
+            <h2>Guia de Instalação</h2>
+            <div class="passos">
+                <ol>
+                    <li>Baixe a ISO oficial.</li>
+                    <li>Use o <strong>BalenaEtcher</strong> para criar o pendrive.</li>
+                    <li>Dê boot pelo USB (F12/F10).</li>
+                    <li>Siga o instalador gráfico.</li>
+                </ol>
+            </div>
         </section>
 
-        <section id="interacao" class="slide">
-            <h2>Teste de Afinidade</h2>
-            <p>Clique no botão abaixo para descobrir seu nível de "Besto Friendo".</p>
-            <button id="btnInterativo">Ativar Técnica Amaldiçoada</button>
-            <p id="mensagemOculta"></p>
+        <section id="terminal" class="slide">
+            <h2>Domine o Terminal</h2>
+            <p>O terminal não é um bicho de sete cabeças. É a sua ferramenta mais rápida.</p>
+            <button id="btnComando">Executar sudo apt update</button>
+            <div id="terminal-output">
+                </div>
         </section>
     </main>
 
