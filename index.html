@@ -1,108 +1,126 @@
-<!-- Aqui começa o arquivo HTML. Este é o esqueleto do site, onde definimos a estrutura como cabeçalho, menu, seções e rodapé. -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Meta tags para responsividade: isso faz o site se adaptar a diferentes tamanhos de tela, como mobile e desktop. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuro Sustentável</title>
-    <!-- Link para o arquivo CSS: aqui conectamos o estilo ao HTML. -->
+    <title>Futuro Sustentável - Trabalho Escolar</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Fonte Google Fonts: moderna e limpa, muito usada no Canva -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Cabeçalho com o menu no topo: isso é a navegação principal, com links para cada seção do site, representando as 7 páginas dos slides. -->
+    <!-- Menu fixo no topo - estilo Canva moderno -->
     <header>
         <nav>
+            <div class="logo">Futuro Sustentável</div>
             <ul>
-                <li><a href="#pagina1">Página 1</a></li>
-                <li><a href="#pagina2">Página 2</a></li>
-                <li><a href="#pagina3">Página 3</a></li>
-                <li><a href="#pagina4">Página 4</a></li>
-                <li><a href="#pagina5">Página 5</a></li>
-                <li><a href="#pagina6">Página 6</a></li>
-                <li><a href="#pagina7">Página 7</a></li>
+                <li><a href="#slide1">Introdução</a></li>
+                <li><a href="#slide2">Problema Atual</a></li>
+                <li><a href="#slide3">Energias Renováveis</a></li>
+                <li><a href="#slide4">Consumo Consciente</a></li>
+                <li><a href="#slide5">Cidades Verdes</a></li>
+                <li><a href="#slide6">Ações Individuais</a></li>
+                <li><a href="#slide7">Conclusão</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Conteúdo principal: cada seção representa uma página dos slides. Usei IDs para os links do menu funcionarem. Assumi conteúdo genérico sobre "Futuro Sustentável" como explicação de um assunto, com títulos, subtítulos e bullet points para manter a hierarquia visual. -->
     <main>
-        <section id="pagina1">
-            <h1>Introdução ao Futuro Sustentável</h1>
-            <h2>O que é Sustentabilidade?</h2>
-            <ul>
-                <li>Definição: Uso de recursos sem comprometer as gerações futuras.</li>
-                <li>Importância: Preservar o planeta para todos.</li>
-            </ul>
-            <!-- Botão para interatividade: ao clicar, vai mudar de cor ou mostrar algo via JavaScript. -->
-            <button id="botao-interativo">Clique para Saber Mais</button>
-            <p id="mensagem-oculta" style="display: none;">Sustentabilidade é essencial para o nosso futuro!</p>
+        <!-- Cada section = 1 slide da apresentação -->
+        <section id="slide1" class="slide">
+            <div class="content">
+                <h1>Futuro Sustentável</h1>
+                <h2>Construindo um mundo melhor para as próximas gerações</h2>
+                <p>Trabalho de [Seu Nome] – 3º Ano Ensino Médio</p>
+                <!-- Botão interativo principal -->
+                <button id="btn-revelar">Descubra o que podemos fazer!</button>
+                <div id="dica-oculta" class="dica-oculta">
+                    <p>O futuro sustentável depende de ações hoje!</p>
+                </div>
+            </div>
         </section>
 
-        <section id="pagina2">
-            <h1>Energia Renovável</h1>
-            <h2>Fontes Alternativas</h2>
-            <ul>
-                <li>Solar: Energia do sol.</li>
-                <li>Eólica: Energia do vento.</li>
-                <li>Hidrelétrica: Energia da água.</li>
-            </ul>
+        <section id="slide2" class="slide">
+            <div class="content">
+                <h1>O Problema Atual</h1>
+                <ul>
+                    <li>Aquecimento global acelerado</li>
+                    <li>Desmatamento em ritmo alarmante</li>
+                    <li>Poluição plástica nos oceanos</li>
+                    <li>Perda de biodiversidade</li>
+                </ul>
+                <p class="frase-impacto">Se continuarmos assim, o planeta não aguenta.</p>
+            </div>
         </section>
 
-        <section id="pagina3">
-            <h1>Consumo Consciente</h1>
-            <h2>Reduzir, Reusar, Reciclar</h2>
-            <ul>
-                <li>Reduzir: Comprar menos.</li>
-                <li>Reusar: Usar itens várias vezes.</li>
-                <li>Reciclar: Transformar lixo em novos produtos.</li>
-            </ul>
+        <section id="slide3" class="slide">
+            <div class="content">
+                <h1>Energias Renováveis</h1>
+                <h3>Fontes limpas e inesgotáveis</h3>
+                <ul>
+                    <li>Energia Solar</li>
+                    <li>Energia Eólica</li>
+                    <li>Energia Hidrelétrica</li>
+                    <li>Biomassa e Geotérmica</li>
+                </ul>
+                <p>Meta: 100% renovável até 2050 em muitos países.</p>
+            </div>
         </section>
 
-        <section id="pagina4">
-            <h1>Agricultura Sustentável</h1>
-            <h2>Práticas Ecológicas</h2>
-            <ul>
-                <li>Orgânicos: Sem pesticidas químicos.</li>
-                <li>Rotação de Culturas: Manter solo saudável.</li>
-            </ul>
+        <section id="slide4" class="slide">
+            <div class="content">
+                <h1>Consumo Consciente</h1>
+                <h3>Os 3 Rs</h3>
+                <ul>
+                    <li><strong>Reduzir</strong> o desperdício</li>
+                    <li><strong>Reutilizar</strong> o que já temos</li>
+                    <li><strong>Reciclar</strong> corretamente</li>
+                </ul>
+                <p>Compras conscientes = menor impacto ambiental.</p>
+            </div>
         </section>
 
-        <section id="pagina5">
-            <h1>Transporte Verde</h1>
-            <h2>Opções Ecológicas</h2>
-            <ul>
-                <li>Bicicletas: Zero emissão.</li>
-                <li>Carros Elétricos: Menos poluição.</li>
-                <li>Transporte Público: Reduz congestionamento.</li>
-            </ul>
+        <section id="slide5" class="slide">
+            <div class="content">
+                <h1>Cidades Verdes</h1>
+                <ul>
+                    <li>Transporte público e ciclovias</li>
+                    <li>Edifícios com telhados verdes</li>
+                    <li>Iluminação LED e economia de energia</li>
+                    <li>Áreas de preservação urbana</li>
+                </ul>
+                <p class="frase-impacto">Cidades sustentáveis = vida mais saudável.</p>
+            </div>
         </section>
 
-        <section id="pagina6">
-            <h1>Educação e Conscientização</h1>
-            <h2>Ensinando as Gerações</h2>
-            <ul>
-                <li>Escolas: Programas ambientais.</li>
-                <li>Campanhas: Redes sociais para espalhar conhecimento.</li>
-            </ul>
+        <section id="slide6" class="slide">
+            <div class="content">
+                <h1>Ações Individuais</h1>
+                <ul>
+                    <li>Economize água e energia em casa</li>
+                    <li>Prefira produtos locais e orgânicos</li>
+                    <li>Use menos plástico descartável</li>
+                    <li>Plante árvores e incentive outros</li>
+                </ul>
+                <p><strong>Você</strong> faz parte da solução!</p>
+            </div>
         </section>
 
-        <section id="pagina7">
-            <h1>Conclusão</h1>
-            <h2>O Caminho para um Futuro Melhor</h2>
-            <ul>
-                <li>Ações Individuais: Cada um faz a diferença.</li>
-                <li>Políticas Globais: Acordos internacionais.</li>
-            </ul>
+        <section id="slide7" class="slide final">
+            <div class="content">
+                <h1>Conclusão</h1>
+                <h2>O futuro é sustentável ou não será</h2>
+                <p>Comece hoje. Cada pequena ação conta.</p>
+                <p>Obrigado pela atenção!</p>
+                <p class="contato">[Seu Nome] – [Sua Escola] – 2026</p>
+            </div>
         </section>
     </main>
 
-    <!-- Rodapé: parte final do site, com informações como autor. -->
     <footer>
-        <p>Criado por [Seu Nome] - Trabalho Escolar sobre Futuro Sustentável</p>
+        <p>Feito com HTML, CSS e JavaScript • Inspirado em apresentações Canva</p>
     </footer>
 
-    <!-- Link para o arquivo JavaScript: aqui conectamos os scripts ao HTML. -->
     <script src="script.js"></script>
 </body>
 </html>

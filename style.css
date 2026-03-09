@@ -1,131 +1,161 @@
-/* Aqui começa o arquivo CSS. Este define as cores, fontes e tamanhos. Usei vermelho (#FF0000) e preto (#000000) como cores principais. Fundo claro para legibilidade, com acentos em vermelho e preto. */
-
-/* Estilos gerais: reset básico para consistência e fontes. */
+/* Reset básico e fontes Canva-style */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    font-family: Arial, sans-serif; /* Fonte simples e legível. */
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; /* Fundo claro para contraste com texto preto. */
-    color: #000000; /* Texto principal em preto. */
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Cabeçalho e menu: menu fixo no topo, com fundo vermelho para destaque. */
+/* Menu fixo no topo - visual moderno Canva */
 header {
-    background-color: #FF0000; /* Cor vermelha para o cabeçalho. */
-    padding: 10px;
-    position: fixed; /* Fixa o menu no topo ao rolar a página. */
+    background: linear-gradient(135deg, #1B5E20, #388E3C);
+    position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000; /* Garante que fique acima de outros elementos. */
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    padding: 15px 0;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 nav ul {
-    list-style: none; /* Remove bullets do menu. */
-    padding: 0;
-    margin: 0;
-    display: flex; /* Menu horizontal. */
-    justify-content: center; /* Centraliza os itens. */
-}
-
-nav li {
-    margin: 0 15px; /* Espaçamento entre itens do menu. */
+    list-style: none;
+    display: flex;
+    gap: 25px;
 }
 
 nav a {
-    color: #000000; /* Links em preto para contraste com fundo vermelho. */
-    text-decoration: none; /* Remove sublinhado dos links. */
-    font-weight: bold; /* Negrito para destaque. */
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
-/* Conteúdo principal: espaçamento para não sobrepor o menu fixo. */
-main {
-    padding-top: 60px; /* Espaço para o cabeçalho fixo. */
-    max-width: 1200px; /* Largura máxima para desktop. */
-    margin: 0 auto; /* Centraliza o conteúdo. */
-    padding: 20px;
+nav a:hover {
+    color: #D32F2F; /* vermelho destaque */
 }
 
-/* Seções: cada uma representa uma página, com borda para separação visual. */
-section {
-    margin-bottom: 40px; /* Espaçamento entre seções. */
-    padding: 20px;
-    background-color: #ffffff; /* Fundo branco para as seções. */
-    border: 1px solid #000000; /* Borda preta. */
-    border-radius: 5px; /* Bordas arredondadas. */
+/* Slides / Seções - imitam slides Canva (muita altura, centralizado) */
+.slide {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px 40px;
+    text-align: center;
 }
 
-/* Títulos: hierarquia com tamanhos decrescentes. */
+.content {
+    max-width: 900px;
+}
+
 h1 {
-    color: #FF0000; /* Títulos principais em vermelho. */
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.8rem;
+    color: #1B5E20;
+    margin-bottom: 20px;
 }
 
-h2 {
-    color: #000000; /* Subtítulos em preto. */
+h2, h3 {
+    font-size: 2.2rem;
+    color: #333;
+    margin: 20px 0;
 }
 
-/* Listas: bullets points com cor vermelha para destaque. */
 ul {
-    list-style-type: disc; /* Bullets padrão. */
-    color: #FF0000; /* Bullets em vermelho. */
+    list-style: none;
+    margin: 30px 0;
+    font-size: 1.3rem;
 }
 
 ul li {
-    color: #000000; /* Texto das listas em preto. */
+    margin: 15px 0;
+    padding-left: 30px;
+    position: relative;
 }
 
-/* Botão interativo: estilo básico com hover para efeito. */
+ul li::before {
+    content: "✔";
+    color: #4CAF50;
+    position: absolute;
+    left: 0;
+    font-size: 1.4rem;
+}
+
+.frase-impacto {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #D32F2F;
+    margin-top: 30px;
+}
+
+/* Botão interativo estilo Canva */
 button {
-    background-color: #FF0000; /* Fundo vermelho. */
-    color: #ffffff; /* Texto branco. */
+    background: #D32F2F;
+    color: white;
     border: none;
-    padding: 10px 20px;
-    cursor: pointer; /* Mãozinha ao passar o mouse. */
-    border-radius: 5px;
+    padding: 15px 40px;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 30px 0;
+    transition: all 0.3s;
 }
 
 button:hover {
-    background-color: #CC0000; /* Vermelho mais escuro ao hover. */
+    background: #B71C1C;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(211,47,47,0.3);
 }
 
-/* Rodapé: centralizado e com fundo preto. */
-footer {
-    background-color: #000000; /* Fundo preto. */
-    color: #ffffff; /* Texto branco. */
-    text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+/* Efeito da mensagem oculta */
+.dica-oculta {
+    background: #FFFDE7;
+    border: 2px solid #4CAF50;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 30px;
+    font-size: 1.4rem;
+    color: #1B5E20;
+    display: none;
+    animation: fadeIn 1s;
 }
 
-/* Responsividade: media queries para adaptar a telas menores. */
-/* Para tablets (até 768px). */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Último slide especial */
+.final {
+    background: linear-gradient(135deg, #1B5E20, #2E7D32);
+    color: white;
+}
+
+.final h1, .final h2 {
+    color: white;
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Menu vertical em telas menores. */
-        align-items: center;
-    }
-
-    nav li {
-        margin: 10px 0; /* Espaçamento vertical. */
-    }
-
-    main {
-        padding: 10px; /* Menos padding em mobile. */
-    }
-}
-
-/* Para mobiles (até 480px). */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 24px; /* Reduz tamanho de títulos. */
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-
-    button {
-        width: 100%; /* Botão full-width em mobile. */
-    }
+    nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; font-size: 0.95rem; }
+    h1 { font-size: 2.8rem; }
+    h2, h3 { font-size: 1.8rem; }
+    .slide { padding: 100px 15px 30px; min-height: auto; }
 }
