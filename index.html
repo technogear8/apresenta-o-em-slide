@@ -4,7 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Futuro Sustentável - Arthur Royer</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: linear-gradient(-45deg, #000, #100000, #200000, #300000);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            background: rgba(255, 0, 0, 0.95);
+            padding: 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 6px 25px rgba(255,0,0,0.7);
+            backdrop-filter: blur(8px);
+        }
+
+        .menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .menu a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 0.9rem 1.6rem;
+            border-radius: 50px;
+            background: rgba(0,0,0,0.4);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .menu a:hover {
+            background: #ff0000;
+            transform: translateY(-8px) rotate(3deg);
+            box-shadow: 0 15px 40px rgba(255,0,0,0.8);
+        }
+
+        section {
+            padding: 7rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1.2s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1, h2 {
+            color: #ff0000;
+            margin-bottom: 1.8rem;
+            text-shadow: 0 0 25px #ff0000, 0 0 50px #ff0000;
+        }
+
+        h1 { font-size: 4.5rem; animation: neonPulse 3s infinite alternate; }
+        h2 { font-size: 3rem; }
+
+        @keyframes neonPulse {
+            from { text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000; }
+            to   { text-shadow: 0 0 50px #ff0000, 0 0 100px #ff0000, 0 0 150px #ff0000; }
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-img {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4) contrast(1.2);
+            animation: slowZoom 25s infinite alternate;
+        }
+
+        @keyframes slowZoom {
+            from { transform: scale(1); }
+            to   { transform: scale(1.15); }
+        }
+
+        .hero-text { position: relative; z-index: 2; text-shadow: 0 0 40px #000; }
+
+        .section-img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 25px;
+            margin: 3rem auto;
+            box-shadow: 0 20px 60px rgba(255,0,0,0.6);
+            transition: all 0.7s ease;
+        }
+
+        .section-img:hover {
+            transform: scale(1.1) rotate(1deg);
+            box-shadow: 0 30px 80px rgba(255,0,0,0.9);
+        }
+
+        .glow-btn {
+            background: linear-gradient(45deg, #ff0000, #cc0000, #ff3333);
+            background-size: 200% 200%;
+            animation: btnGradient 5s ease infinite;
+            color: white;
+            border: none;
+            padding: 1.5rem 5rem;
+            font-size: 1.6rem;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 60px;
+            margin: 3.5rem auto;
+            display: block;
+            box-shadow: 0 0 50px #ff0000;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-btn::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.6s;
+        }
+
+        .glow-btn:hover::before { opacity: 1; }
+
+        .glow-btn:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 100px #ff0000, 0 0 150px #ff0000;
+        }
+
+        @keyframes btnGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        #mensagem {
+            display: none;
+            font-size: 2rem;
+            color: #00ff99;
+            margin-top: 2.5rem;
+            font-weight: bold;
+            text-shadow: 0 0 30px #00ff99;
+            animation: popIn 0.8s ease;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .menu { flex-direction: column; gap: 1.2rem; }
+            h1 { font-size: 3.5rem; }
+            section { padding: 5rem 1rem; }
+        }
+    </style>
 </head>
 <body>
 
@@ -22,39 +207,39 @@
         </nav>
     </header>
 
-    <section id="slide1" class="hero animate-on-scroll">
-        <img src="https://thumbs.dreamstime.com/b/cyberpunk-wind-turbines-cool-art-portrays-night-sky-neon-lights-dark-tones-style-environmental-generative-305911391.jpg" alt="Turbinas cyberpunk neon" class="hero-img animate-img">
+    <section id="slide1" class="hero">
+        <img src="https://thumbs.dreamstime.com/b/cyberpunk-wind-turbines-cool-art-portrays-night-sky-neon-lights-dark-tones-style-environmental-generative-305911391.jpg" alt="Turbinas cyberpunk neon" class="hero-img">
         <div class="hero-text">
             <h1>Futuro Sustentável</h1>
             <p>Arthur Royer Nº7 - 3°D</p>
         </div>
     </section>
 
-    <section id="slide2" class="animate-on-scroll">
+    <section id="slide2">
         <h2>O Problema</h2>
         <p>Escassez de recursos naturais e acúmulo de resíduos.</p>
-        <img src="https://thumbs.dreamstime.com/b/futuristic-cityscape-wind-turbine-solar-panel-vibrant-luminous-city-depicted-gleaming-skyscrapers-innovative-green-416715460.jpg" alt="Cidade futurista com turbinas" class="section-img animate-img">
+        <img src="https://thumbs.dreamstime.com/b/futuristic-cityscape-wind-turbine-solar-panel-vibrant-luminous-city-depicted-gleaming-skyscrapers-innovative-green-416715460.jpg" alt="Cidade futurista com turbinas" class="section-img">
     </section>
 
-    <section id="slide3" class="animate-on-scroll">
+    <section id="slide3">
         <h2>A Realidade</h2>
         <p>A demanda global ultrapassa a regeneração da Terra em 1,7 vezes por ano.</p>
-        <img src="https://thumbs.dreamstime.com/b/artistic-depiction-futuristic-city-skyline-powered-renewable-energy-image-showcases-wind-turbines-silhouetted-408067199.jpg" alt="Skyline com turbinas neon" class="section-img animate-img">
+        <img src="https://thumbs.dreamstime.com/b/artistic-depiction-futuristic-city-skyline-powered-renewable-energy-image-showcases-wind-turbines-silhouetted-408067199.jpg" alt="Skyline com turbinas neon" class="section-img">
     </section>
 
-    <section id="slide4" class="animate-on-scroll">
+    <section id="slide4">
         <h2>O Dilema</h2>
         <p>Crescer para 8 bilhões sem destruir os ecossistemas?</p>
-        <img src="https://thumbs.dreamstime.com/b/glowing-digital-wind-turbines-stand-field-futuristic-renewable-energy-farm-generates-electricity-clean-power-blue-graphic-426172194.jpg" alt="Turbinas digitais glowing" class="section-img animate-img">
+        <img src="https://thumbs.dreamstime.com/b/glowing-digital-wind-turbines-stand-field-futuristic-renewable-energy-farm-generates-electricity-clean-power-blue-graphic-426172194.jpg" alt="Turbinas digitais glowing" class="section-img">
     </section>
 
-    <section id="slide5" class="animate-on-scroll">
+    <section id="slide5">
         <h2>O Cenário Atual: O Grande Desafio</h2>
         <p>O planeta em risco – hora de agir.</p>
-        <img src="https://thumbs.dreamstime.com/b/incorporates-bright-neon-colors-structured-grid-background-futuristic-tech-inspired-aesthetic-low-poly-earth-405376570.jpg" alt="Terra neon low-poly" class="section-img animate-img">
+        <img src="https://thumbs.dreamstime.com/b/incorporates-bright-neon-colors-structured-grid-background-futuristic-tech-inspired-aesthetic-low-poly-earth-405376570.jpg" alt="Terra neon low-poly" class="section-img">
     </section>
 
-    <section id="slide6" class="animate-on-scroll">
+    <section id="slide6">
         <h2>A Solução</h2>
         <p>Práticas sustentáveis + energias renováveis + consumo consciente.</p>
         <ul>
@@ -62,18 +247,53 @@
             <li>Energia solar e eólica</li>
             <li>Economia circular</li>
         </ul>
-        <img src="https://thumbs.dreamstime.com/b/wind-turbines-generating-clean-energy-futuristic-city-dusk-solar-panels-stand-tall-cityscape-sustainable-as-sun-356976470.jpg" alt="Cidade ao pôr do sol sustentável" class="section-img animate-img">
+        <img src="https://thumbs.dreamstime.com/b/wind-turbines-generating-clean-energy-futuristic-city-dusk-solar-panels-stand-tall-cityscape-sustainable-as-sun-356976470.jpg" alt="Cidade ao pôr do sol sustentável" class="section-img">
         
         <button id="btn-interativo" class="glow-btn">Ativar a Mudança Sustentável! 🌱⚡</button>
         <p id="mensagem">O futuro começa com VOCÊ! Cada ação gera energia! 💚🔥</p>
     </section>
 
-    <section id="slide7" class="animate-on-scroll">
+    <section id="slide7">
         <h2>Conclusão</h2>
         <p>Nossas escolhas hoje definem o amanhã sustentável.</p>
         <p>Obrigado pela atenção! Perguntas?</p>
     </section>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Scroll suave
+            document.querySelectorAll('.menu a').forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Animações ao scroll
+            const sections = document.querySelectorAll('section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            sections.forEach(section => observer.observe(section));
+
+            // Botão interativo
+            const btn = document.getElementById('btn-interativo');
+            const msg = document.getElementById('mensagem');
+
+            btn.addEventListener('click', () => {
+                msg.style.display = 'block';
+                btn.textContent = 'Energia Máxima Ativada! ⚡🔥';
+                setTimeout(() => {
+                    alert('Arthur, seu site tá insano agora! Vai gabaritar o trabalho! 🚀💥');
+                }, 1500);
+            });
+        });
+    </script>
 </body>
 </html>
