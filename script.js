@@ -1,19 +1,37 @@
-// Espera o documento carregar completamente
-document.addEventListener('DOMContentLoaded', function() {
-    // Pega o botão pelo ID
-    const button = document.getElementById('interact-button');
-    
-    // Pega a mensagem escondida pelo ID
-    const message = document.getElementById('message');
-    
-    // Adiciona um evento de clique ao botão
-    button.addEventListener('click', function() {
-        // Mostra a mensagem (muda display de none para block)
-        message.style.display = 'block';
-        
-        // Muda a cor do botão para um vermelho mais escuro (efeito visual)
-        button.style.backgroundColor = '#cc0000';
-        
-        // Exemplo de alerta opcional: alert('Você clicou! A IA é incrível!');
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Scroll suave
+    document.querySelectorAll('.menu a').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Animações ao scroll
+    const sections = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Botão épico
+    const btn = document.getElementById('btn-interativo');
+    const msg = document.getElementById('mensagem');
+
+    btn.addEventListener('click', () => {
+        msg.style.display = 'block';
+        btn.textContent = 'Energia Máxima Ativada! ⚡🔥';
+        btn.style.animation = 'none';
+        setTimeout(() => { btn.style.animation = 'btnGradient 3s ease infinite'; }, 100);
+
+        setTimeout(() => {
+            alert('Arthur, seu site tá MUITO top top agora! Vai gabaritar o trabalho! 🚀💥');
+        }, 1800);
     });
 });
